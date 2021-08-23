@@ -1,5 +1,6 @@
 import MeetupList from "../components/meetups/MeetupList";
 import { useEffect, useState } from "react";
+import { Box, Button, CircularProgress, makeStyles } from "@material-ui/core";
 
 function AllMeetupsPages() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,14 @@ function AllMeetupsPages() {
   if (isLoading) {
     return (
       <section>
-        <p>Loading...</p>
+        <Box
+          width="1"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <CircularProgress />
+        </Box>
       </section>
     );
   }
